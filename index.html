@@ -1,20 +1,271 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ThriveOn</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThriveOn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Your Simple Code Base */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #0077cc;
+            margin-top: 30px;
+            font-size: 2.5em;
+        }
+
+        .profile {
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .profile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,119,204,0.15);
+        }
+
+        .profile h2 {
+            color: #222;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            color: #666;
+            margin: 8px 0;
+        }
+
+        .contact {
+            color: #0077cc;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(0,119,204,0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact:hover {
+            background: rgba(0,119,204,0.2);
+            transform: scale(1.05);
+        }
+
+        /* YOUR COMPLEX CODE ADDED HERE */
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #0077cc;
+        }
+
+        .submit-btn {
+            background-color: #0077cc;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 119, 204, 0.3);
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form-section h3 {
+            color: #0077cc;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #0077cc;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 25px;
+            border-top: 2px solid #eee;
+        }
+
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0077cc;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        #back-to-top.active {
+            display: flex;
+        }
+
+        #back-to-top:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-  <h1>ThriveOn Website</h1>
-  
-  <div class="profile">
-    <h2>Ali Raza</h2>
-    <p>Owner & Developer of ThriveOn</p>
-    <p class="contact">📞 Contact: 0334-5932609</p>
-  </div>
+    <!-- Your Simple Code -->
+    <h1>ThriveOn Website</h1>
+    
+    <div class="profile">
+        <h2>Ali Raza</h2>
+        <p>Owner & Developer of ThriveOn</p>
+        <p class="contact">📞 Contact: 0334-5932609</p>
+    </div>
 
-  <footer>Created by Ali Raza | © 2025 ThriveOn</footer>
+    <!-- Contact Form from Your Complex Code -->
+    <div class="contact-form-section">
+        <h3>Contact Form</h3>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
 
-  <script src="script.js"></script>
+    <footer>Created by Ali Raza | © 2025 ThriveOn</footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Your Simple Alert
+        console.log("Website is working!");
+        alert("Welcome to ThriveOn!");
+
+        // YOUR COMPLEX JAVASCRIPT CODE ADDED
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('nav');
+
+        if (mobileMenuBtn && nav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                mobileMenuBtn.innerHTML = nav.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+        }
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (nav && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. I will contact you soon!');
+            this.reset();
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.profile, .contact-form-section');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementPosition < windowHeight - 50) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animation
+        document.querySelectorAll('.profile, .contact-form-section').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        // Initial check
+        animateOnScroll();
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
 </body>
 </html>
